@@ -18,3 +18,22 @@ models/
 # OS and editor
 .DS_Store
 .vscode/
+
+# Raw experiment data and server logs
+/eval/results/
+/eval/logs/
+*.log
+
+# Build artifacts
+/dist/
+/build/
+*.egg-info/
+
+# Static analysis
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Temporary files
+*.tmp
+*.bak
