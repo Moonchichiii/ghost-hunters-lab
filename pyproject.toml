@@ -1,7 +1,7 @@
 [project]
 name = "ghost-hunters-lab"
 version = "0.1.0"
-description = "description = "A local AI interpretability lab for discovering, steering, and measuring features inside Gemma."
+description = "A local AI interpretability lab for discovering, steering, and measuring features inside Gemma."
 authors = [
     { name = "Mats Gustafsson", email = "matgus1983@gmail.com" }
 ]
