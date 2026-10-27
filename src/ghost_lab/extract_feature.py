@@ -1,4 +1,3 @@
-
 """Extract one SAE decoder direction without loading the full checkpoint."""
 
 import hashlib
