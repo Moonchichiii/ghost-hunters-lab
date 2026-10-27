@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Local models and experiment artifacts
+*.gguf
+*.safetensors
+*.f32
+models/
+
+# Local configuration
+.env
+.env.*
+
+# OS and editor
+.DS_Store
+.vscode/
