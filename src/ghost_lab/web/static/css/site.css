@@ -1,0 +1,18 @@
+:root {
+  --bg: #0A0C0E;
+  --surface: #13171B;
+  --ink: #F2F4F5;
+  --ink-2: #C3CAD0;
+  --ink-3: #AAB3BB;
+  --ghost: #F2B45C;
+  --control: #9EC3FF;
+  --ok: #7EE0A6;
+  --border-ui: #7A848D;
+  --divider: #2E353C;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
