@@ -10,6 +10,13 @@ def test_home_renders_headline() -> None:
     assert "change one thought" in response.text
 
 
+def test_home_opens_with_the_editorial_hero() -> None:
+    client = TestClient(create_app())
+    page = client.get("/")
+    assert "Ghost in the Machine" in page.text
+    assert "Gilbert Ryle" in page.text
+
+
 def test_stylesheet_is_linked_and_served_locally() -> None:
     client = TestClient(create_app())
     page = client.get("/")

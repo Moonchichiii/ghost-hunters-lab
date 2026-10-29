@@ -27,3 +27,76 @@ body {
   color: var(--ink);
   font-family: var(--font-sans);
 }
+
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+  line-height: 1.6;
+}
+
+:is(h1, h2, h3, p) {
+  margin: 0;
+}
+
+a {
+  color: var(--control);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ghost);
+  outline-offset: 3px;
+}
+
+/* Layout */
+.page {
+  inline-size: min(100% - 2.5rem, 75rem);
+  margin-inline: auto;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  padding-block: clamp(2.5rem, 8vw, 7rem) clamp(3rem, 10vw, 8rem);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ghost);
+
+  & span {
+    color: var(--ink-3);
+  }
+}
+
+.hero h1 {
+  max-inline-size: 18ch;
+  font-size: clamp(2.0625rem, 1.4rem + 3.6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.lead {
+  max-inline-size: 52ch;
+  font-size: clamp(1.125rem, 1rem + 0.7vw, 1.5625rem);
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.note {
+  max-inline-size: 62ch;
+  font-size: 1rem;
+  color: var(--ink-3);
+}
