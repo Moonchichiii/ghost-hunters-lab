@@ -1,9 +1,9 @@
 # The Ghost Hunter's Lab — Scientific Evidence Report
 
-**Evidence snapshot:** 29 October 2026  
-**Research branch:** `feat/steering-validation`  
-**Last reported research commit:** `5a766c4` (`feat: export verified steering evidence for publication`)  
-**Status:** Activation-steering investigation completed at strength +16; general-capability preservation and weight editing not established.  
+**Evidence snapshot:** 29 October 2026
+**Research branch:** `feat/steering-validation`
+**Last reported research commit:** `5a766c4` (`feat: export verified steering evidence for publication`)
+**Status:** Activation-steering investigation completed at strength +16; general-capability preservation and weight editing not established.
 **Source policy:** This report documents results supplied in the project terminal transcript and the exporter contract. It is not an independent examination of the raw JSON files, which remain on the developer's machine.
 
 ## 1. Research question and scope
@@ -46,11 +46,11 @@ The six-prompt pilot and its 24/24 reproducibility regression were exploratory; 
 
 ## 4. Held-out steering evaluation
 
-**Dataset:** `eval/heldout_prompts.json` (20 unique prompts: eight neutral, six ambiguous, six supernatural). Created and committed before evaluation, but designed with prior knowledge of the candidate feature and exploratory results; it is **not** an independently sampled representative benchmark.  
-**Dataset commit:** `e8b4f91`.  
-**Dataset SHA-256:** `3fdc774a6274f77512694bb983ea30b7445179a4e31617e88fd5e7d448e2de73`.  
-**Raw-result file:** `eval/results/heldout_20261029T100108969558Z.json` (local; Git-ignored).  
-**Raw-result SHA-256:** `a1c7fce2d532e444236930adf0d2c738bea85dc476eec1f57cf506c56fe28910`.  
+**Dataset:** `eval/heldout_prompts.json` (20 unique prompts: eight neutral, six ambiguous, six supernatural). Created and committed before evaluation, but designed with prior knowledge of the candidate feature and exploratory results; it is **not** an independently sampled representative benchmark.
+**Dataset commit:** `e8b4f91`.
+**Dataset SHA-256:** `3fdc774a6274f77512694bb983ea30b7445179a4e31617e88fd5e7d448e2de73`.
+**Raw-result file:** `eval/results/heldout_20261029T100108969558Z.json` (local; Git-ignored).
+**Raw-result SHA-256:** `a1c7fce2d532e444236930adf0d2c738bea85dc476eec1f57cf506c56fe28910`.
 **Coverage:** 140/140 unique prompt-condition pairs, status `completed`; no missing target or comparator values in reported verification.
 
 ### Primary metric
@@ -95,11 +95,11 @@ These are small hand-selected subgroups, not evidence of a reliable category int
 
 ## 5. Unrelated next-token side-effect probes
 
-**Dataset:** `eval/side_effect_prompts.json`, 12 prompts spanning geography, colors, language and everyday knowledge. Frozen prior to evaluation.  
-**Dataset commit:** `325112f`.  
-**Dataset SHA-256:** `0098d695adf1532ca0c4575420d3b845c26f4e02e7f6b74f30cbce874ca0791d`.  
-**Raw-result file:** `eval/results/side_effects_20261029T105547813287Z.json` (local; Git-ignored).  
-**Raw-result SHA-256:** `dd9f08c28b3a06a975aec5a1f48a72a9606e02ae58fb17574110004e01e8b6ec`.  
+**Dataset:** `eval/side_effect_prompts.json`, 12 prompts spanning geography, colors, language and everyday knowledge. Frozen prior to evaluation.
+**Dataset commit:** `325112f`.
+**Dataset SHA-256:** `0098d695adf1532ca0c4575420d3b845c26f4e02e7f6b74f30cbce874ca0791d`.
+**Raw-result file:** `eval/results/side_effects_20261029T105547813287Z.json` (local; Git-ignored).
+**Raw-result SHA-256:** `dd9f08c28b3a06a975aec5a1f48a72a9606e02ae58fb17574110004e01e8b6ec`.
 **Coverage:** 36/36 unique pairs, zero missing target scores; tokenizer IDs checked against the running Gemma tokenizer.
 
 Measured **change in log probability of a preselected exact next token**; this is **not** accuracy, perplexity, arithmetic competence, or a broad benchmark.
@@ -124,10 +124,10 @@ The SAE direction changed unrelated predictions. In this specific probe set, the
 
 ## 6. Publication evidence contract and integrity
 
-**Generated artifact:** `eval/summary.json`, schema version 1, about 28 KB; exported by `python -m ghost_lab.export_evidence` from the two local raw-result files.  
-**Exporter commit:** `5a766c4` on `feat/steering-validation`.  
-**Summary SHA-256:** `4a900d168f03c95a867fd9b88f3ee64abc16f14ce58eb00ee2098a0670fcd55d`.  
-**Repeatability check:** The same SHA-256 was observed before and after a second export.  
+**Generated artifact:** `eval/summary.json`, schema version 1, about 28 KB; exported by `python -m ghost_lab.export_evidence` from the two local raw-result files.
+**Exporter commit:** `5a766c4` on `feat/steering-validation`.
+**Summary SHA-256:** `4a900d168f03c95a867fd9b88f3ee64abc16f14ce58eb00ee2098a0670fcd55d`.
+**Repeatability check:** The same SHA-256 was observed before and after a second export.
 **Quality gates, last reported:** 60 passing tests; Ruff lint and format clean; strict mypy clean across 13 source files.
 
 The summary contains: analysis for primary and secondary metrics; all 20 held-out prompt deltas; 12 side-effect prompt deltas; experiment and dataset fingerprints; model/vector provenance; and statuses marking weight-level exorcism, general-capability preservation, and selective-concept control as unestablished. Reported scan found no `/home/masse`, `/mnt/data`, `localhost`, or `127.0.0.1` strings.
