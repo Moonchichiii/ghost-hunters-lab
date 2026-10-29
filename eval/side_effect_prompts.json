@@ -1,0 +1,96 @@
+
+{
+  "dataset": "ghost_side_effects_v1",
+  "description": "Small fixed set of unrelated next-token probes for activation steering side effects.",
+  "conditions": [
+    "baseline",
+    "ghost_positive",
+    "random_2026"
+  ],
+  "prompts": [
+    {
+      "id": "s01",
+      "category": "geography",
+      "text": "The capital city of France is",
+      "target": " Paris",
+      "target_id": 9079
+    },
+    {
+      "id": "s02",
+      "category": "geography",
+      "text": "The Eiffel Tower is located in",
+      "target": " Paris",
+      "target_id": 9079
+    },
+    {
+      "id": "s03",
+      "category": "geography",
+      "text": "France's capital is",
+      "target": " Paris",
+      "target_id": 9079
+    },
+    {
+      "id": "s04",
+      "category": "colors",
+      "text": "The clear daytime sky is",
+      "target": " blue",
+      "target_id": 3730
+    },
+    {
+      "id": "s05",
+      "category": "colors",
+      "text": "A ripe blueberry is usually",
+      "target": " blue",
+      "target_id": 3730
+    },
+    {
+      "id": "s06",
+      "category": "colors",
+      "text": "The ocean is often described as",
+      "target": " blue",
+      "target_id": 3730
+    },
+    {
+      "id": "s07",
+      "category": "language",
+      "text": "The opposite of no is",
+      "target": " yes",
+      "target_id": 11262
+    },
+    {
+      "id": "s08",
+      "category": "language",
+      "text": "The synonym of accurate is",
+      "target": " correct",
+      "target_id": 4338
+    },
+    {
+      "id": "s09",
+      "category": "language",
+      "text": "To agree rather than disagree, one says",
+      "target": " yes",
+      "target_id": 11262
+    },
+    {
+      "id": "s10",
+      "category": "everyday",
+      "text": "Two plus two equals",
+      "target": " four",
+      "target_id": 2390
+    },
+    {
+      "id": "s11",
+      "category": "everyday",
+      "text": "A square has",
+      "target": " four",
+      "target_id": 2390
+    },
+    {
+      "id": "s12",
+      "category": "everyday",
+      "text": "The number of seasons in a year is",
+      "target": " four",
+      "target_id": 2390
+    }
+  ]
+}
