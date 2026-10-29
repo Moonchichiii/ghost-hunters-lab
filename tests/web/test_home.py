@@ -27,3 +27,10 @@ def test_favicon_is_linked_and_served_locally() -> None:
     icon = client.get("/static/favicon.svg")
     assert icon.status_code == 200
     assert icon.headers["content-type"].startswith("image/svg+xml")
+
+
+def test_font_is_served_locally() -> None:
+    client = TestClient(create_app())
+    font = client.get("/static/fonts/Poppins-Variable.woff2")
+    assert font.status_code == 200
+    assert len(font.content) > 10_000

@@ -1,4 +1,14 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  --font-sans: "Poppins", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --bg: #0A0C0E;
   --surface: #13171B;
   --ink: #F2F4F5;
@@ -15,4 +25,5 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
+  font-family: var(--font-sans);
 }
