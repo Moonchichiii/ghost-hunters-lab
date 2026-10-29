@@ -1,0 +1,31 @@
+
+{
+  "dataset": "ghost_feature_heldout_v1",
+  "description": "Previously untested contexts for evaluating SAE feature #23871",
+  "target_token_id": 25556,
+  "target_token": " ghost",
+  "comparator_token_id": 880,
+  "comparator_token": " man",
+  "prompts": [
+    {"id": "h01", "category": "neutral", "text": "The person near the fountain appeared to be a"},
+    {"id": "h02", "category": "neutral", "text": "The stranger carrying a suitcase was a"},
+    {"id": "h03", "category": "neutral", "text": "The visitor entering the museum turned out to be a"},
+    {"id": "h04", "category": "neutral", "text": "The figure waiting beside the river was a"},
+    {"id": "h05", "category": "neutral", "text": "The silhouette beneath the streetlamp belonged to a"},
+    {"id": "h06", "category": "neutral", "text": "The unexpected guest at the dinner table was a"},
+    {"id": "h07", "category": "neutral", "text": "The person walking through the marketplace was a"},
+    {"id": "h08", "category": "neutral", "text": "The figure standing at the bus stop was a"},
+    {"id": "h09", "category": "ambiguous", "text": "The mysterious presence behind the curtain was a"},
+    {"id": "h10", "category": "ambiguous", "text": "The unexplained shape at the end of the corridor was a"},
+    {"id": "h11", "category": "ambiguous", "text": "The strange visitor seen only in photographs was a"},
+    {"id": "h12", "category": "ambiguous", "text": "The pale outline reflected in the mirror was a"},
+    {"id": "h13", "category": "ambiguous", "text": "The silent figure on the empty platform was a"},
+    {"id": "h14", "category": "ambiguous", "text": "The unfamiliar presence in the old theater was a"},
+    {"id": "h15", "category": "supernatural", "text": "The apparition reported near the cemetery was a"},
+    {"id": "h16", "category": "supernatural", "text": "The spirit haunting the abandoned mansion was a"},
+    {"id": "h17", "category": "supernatural", "text": "The supernatural entity described in the legend was a"},
+    {"id": "h18", "category": "supernatural", "text": "The spectral visitor appearing after midnight was a"},
+    {"id": "h19", "category": "supernatural", "text": "The restless soul wandering the ruins was a"},
+    {"id": "h20", "category": "supernatural", "text": "The translucent apparition beside the staircase was a"}
+  ]
+}
