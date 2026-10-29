@@ -1,0 +1,733 @@
+{
+  "schema_version": 1,
+  "title": "The Ghost Hunter's Lab — Experimental Evidence",
+  "model": "Gemma 3 4B IT Q4_K_M",
+  "feature_id": 23871,
+  "layer": 22,
+  "strength": 16,
+  "provenance": {
+    "model_sha256": "4996030242583a40aa151ff93f49ed787ac8c25e4120c3ae4588b2e2a7d1ae94",
+    "llama_cpp_revision": "fae9ac561f7c20b320d89103be67372381485653",
+    "source_files": {
+      "heldout_sha256": "a1c7fce2d532e444236930adf0d2c738bea85dc476eec1f57cf506c56fe28910",
+      "side_effects_sha256": "dd9f08c28b3a06a975aec5a1f48a72a9606e02ae58fb17574110004e01e8b6ec"
+    },
+    "dataset_sha256": {
+      "heldout": "3fdc774a6274f77512694bb983ea30b7445179a4e31617e88fd5e7d448e2de73",
+      "side_effects": "0098d695adf1532ca0c4575420d3b845c26f4e02e7f6b74f30cbce874ca0791d"
+    },
+    "heldout_vector_sha256": {
+      "baseline": null,
+      "ghost_positive": "1a29a374454f40077a83b67bcaf367c98489f0858ba8b223d0e793bec69fa3a5",
+      "random_2026": "99ad8c74a05d87ca0c0bc1094bdff21aa2a9b0c991f771ab5afd79ff6b10f2ad",
+      "random_2027": "7c53760d15108f818287b3ffcb5392b23adcd99167a9f0692d50880f5824fb98",
+      "random_2028": "2c10ec30a1c78d4137d812497f080c7a478d33a0896dbd480fd15c4d3e52c2d4",
+      "random_2029": "2a8fa5d21dc20314ecb04d989cd069e603f01d87f7b3724a1933c5c0982d82ce",
+      "random_2030": "c867a536eba5fa07884a37ff1dc3a927d2ebb9851745d8624964cc321af5931c"
+    }
+  },
+  "heldout": {
+    "observations": 140,
+    "prompts": 20,
+    "analysis": {
+      "experiment": "ghost_feature_heldout_v1",
+      "dataset_sha256": "3fdc774a6274f77512694bb983ea30b7445179a4e31617e88fd5e7d448e2de73",
+      "primary_measure": "delta_log_probability_of_exact_ghost_token",
+      "secondary_measure": "delta_ghost_vs_man_log_preference",
+      "summaries": {
+        "ghost_positive": {
+          "n": 20,
+          "mean": 0.01638694405555725,
+          "median": 0.06350159645080566,
+          "standard_deviation": 0.12136763033848892,
+          "positive": 13,
+          "negative": 7,
+          "zero": 0
+        },
+        "random_2026": {
+          "n": 20,
+          "mean": -0.04936577677726746,
+          "median": -0.043205976486206055,
+          "standard_deviation": 0.12060143861533147,
+          "positive": 7,
+          "negative": 13,
+          "zero": 0
+        },
+        "random_2027": {
+          "n": 20,
+          "mean": -0.006433242559432983,
+          "median": -0.028739213943481445,
+          "standard_deviation": 0.11422431439728793,
+          "positive": 8,
+          "negative": 12,
+          "zero": 0
+        },
+        "random_2028": {
+          "n": 20,
+          "mean": -0.03373408317565918,
+          "median": -0.022043347358703613,
+          "standard_deviation": 0.12661292949277073,
+          "positive": 8,
+          "negative": 12,
+          "zero": 0
+        },
+        "random_2029": {
+          "n": 20,
+          "mean": -0.030156749486923217,
+          "median": -0.04485177993774414,
+          "standard_deviation": 0.13531889130591232,
+          "positive": 6,
+          "negative": 14,
+          "zero": 0
+        },
+        "random_2030": {
+          "n": 20,
+          "mean": -0.03679349422454834,
+          "median": -0.04990100860595703,
+          "standard_deviation": 0.1312776409405396,
+          "positive": 6,
+          "negative": 14,
+          "zero": 0
+        }
+      },
+      "preference_summaries": {
+        "ghost_positive": {
+          "n": 20,
+          "mean": 0.04221847951412201,
+          "median": 0.06857147812843323,
+          "standard_deviation": 0.17034732642474393,
+          "positive": 11,
+          "negative": 9,
+          "zero": 0
+        },
+        "random_2026": {
+          "n": 20,
+          "mean": -0.008196467161178589,
+          "median": -0.03798544406890869,
+          "standard_deviation": 0.20460154049765455,
+          "positive": 8,
+          "negative": 12,
+          "zero": 0
+        },
+        "random_2027": {
+          "n": 20,
+          "mean": 0.025101515650749206,
+          "median": -0.022716760635375977,
+          "standard_deviation": 0.1867933199979746,
+          "positive": 9,
+          "negative": 11,
+          "zero": 0
+        },
+        "random_2028": {
+          "n": 20,
+          "mean": -0.04389913678169251,
+          "median": -0.07605016231536865,
+          "standard_deviation": 0.21754319774041794,
+          "positive": 8,
+          "negative": 12,
+          "zero": 0
+        },
+        "random_2029": {
+          "n": 20,
+          "mean": -0.010002195835113525,
+          "median": -0.03741312026977539,
+          "standard_deviation": 0.1533223341360203,
+          "positive": 8,
+          "negative": 12,
+          "zero": 0
+        },
+        "random_2030": {
+          "n": 20,
+          "mean": -0.03585929572582245,
+          "median": -0.006687045097351074,
+          "standard_deviation": 0.19310198985463742,
+          "positive": 9,
+          "negative": 11,
+          "zero": 0
+        }
+      },
+      "ghost_mean_exceeds_random_means": 5,
+      "ghost_exceeds_all_randoms_per_prompt": 6,
+      "preference_ghost_mean_exceeds_random_means": 5,
+      "preference_ghost_exceeds_all_randoms_per_prompt": 5,
+      "category_summaries": {
+        "ambiguous": {
+          "n": 6,
+          "mean": 0.04082387685775757,
+          "median": 0.06746029853820801,
+          "standard_deviation": 0.06487423284686125,
+          "positive": 4,
+          "negative": 2,
+          "zero": 0
+        },
+        "neutral": {
+          "n": 8,
+          "mean": 0.005712687969207764,
+          "median": 0.05317187309265137,
+          "standard_deviation": 0.1509690212521302,
+          "positive": 5,
+          "negative": 3,
+          "zero": 0
+        },
+        "supernatural": {
+          "n": 6,
+          "mean": 0.006182352701822917,
+          "median": 0.04005789756774902,
+          "standard_deviation": 0.13723540501099815,
+          "positive": 4,
+          "negative": 2,
+          "zero": 0
+        }
+      },
+      "limitations": [
+        "Twenty frozen prompts, not a representative language sample",
+        "Only five sampled norm-matched random directions",
+        "Exact next-token metric, not concept-level ghost understanding",
+        "Ghost-versus-man preference is a two-token comparison",
+        "No general-capability side-effect evaluation"
+      ]
+    },
+    "per_prompt": [
+      {
+        "prompt_id": "h01",
+        "category": "neutral",
+        "prompt": "The person near the fountain appeared to be a",
+        "primary_deltas": {
+          "ghost_positive": -0.07025337219238281,
+          "random_2026": -0.2174391746520996,
+          "random_2027": -0.08455991744995117,
+          "random_2028": -0.34353065490722656,
+          "random_2029": -0.030082225799560547,
+          "random_2030": 0.018522262573242188
+        },
+        "preference_deltas": {
+          "ghost_positive": -0.013416528701782227,
+          "random_2026": -0.17418551445007324,
+          "random_2027": -0.07924652099609375,
+          "random_2028": -0.2860291004180908,
+          "random_2029": 0.02844834327697754,
+          "random_2030": 0.03684830665588379
+        }
+      },
+      {
+        "prompt_id": "h02",
+        "category": "neutral",
+        "prompt": "The stranger carrying a suitcase was a",
+        "primary_deltas": {
+          "ghost_positive": 0.07563161849975586,
+          "random_2026": -0.024160385131835938,
+          "random_2027": -0.03708696365356445,
+          "random_2028": -0.03884553909301758,
+          "random_2029": -0.11276388168334961,
+          "random_2030": -0.11274909973144531
+        },
+        "preference_deltas": {
+          "ghost_positive": 0.22391796112060547,
+          "random_2026": 0.02488422393798828,
+          "random_2027": -0.026066303253173828,
+          "random_2028": -0.1717844009399414,
+          "random_2029": -0.11934876441955566,
+          "random_2030": -0.06730175018310547
+        }
+      },
+      {
+        "prompt_id": "h03",
+        "category": "neutral",
+        "prompt": "The visitor entering the museum turned out to be a",
+        "primary_deltas": {
+          "ghost_positive": 0.030712127685546875,
+          "random_2026": 0.05005788803100586,
+          "random_2027": -0.0882406234741211,
+          "random_2028": -0.10405540466308594,
+          "random_2029": -0.17317438125610352,
+          "random_2030": -0.23363304138183594
+        },
+        "preference_deltas": {
+          "ghost_positive": -0.03972792625427246,
+          "random_2026": 0.2047255039215088,
+          "random_2027": -0.15463995933532715,
+          "random_2028": -0.335294246673584,
+          "random_2029": -0.14420557022094727,
+          "random_2030": -0.19437670707702637
+        }
+      },
+      {
+        "prompt_id": "h04",
+        "category": "neutral",
+        "prompt": "The figure waiting beside the river was a",
+        "primary_deltas": {
+          "ghost_positive": 0.10137271881103516,
+          "random_2026": -0.018713951110839844,
+          "random_2027": -0.05335235595703125,
+          "random_2028": -0.16957902908325195,
+          "random_2029": -0.039275169372558594,
+          "random_2030": -0.14013290405273438
+        },
+        "preference_deltas": {
+          "ghost_positive": 0.04947078227996826,
+          "random_2026": -0.04396963119506836,
+          "random_2027": -0.036269426345825195,
+          "random_2028": -0.21467888355255127,
+          "random_2029": -0.07054424285888672,
+          "random_2030": -0.25199246406555176
+        }
+      },
+      {
+        "prompt_id": "h05",
+        "category": "neutral",
+        "prompt": "The silhouette beneath the streetlamp belonged to a",
+        "primary_deltas": {
+          "ghost_positive": 0.08759117126464844,
+          "random_2026": 0.1751108169555664,
+          "random_2027": 0.1692667007446289,
+          "random_2028": 0.13233470916748047,
+          "random_2029": -0.07501983642578125,
+          "random_2030": 0.11631011962890625
+        },
+        "preference_deltas": {
+          "ghost_positive": 0.0876721739768982,
+          "random_2026": 0.23829102516174316,
+          "random_2027": 0.1828029751777649,
+          "random_2028": 0.13159501552581787,
+          "random_2029": -0.08709430694580078,
+          "random_2030": 0.10388606786727905
+        }
+      },
+      {
+        "prompt_id": "h06",
+        "category": "neutral",
+        "prompt": "The unexpected guest at the dinner table was a",
+        "primary_deltas": {
+          "ghost_positive": -0.23456382751464844,
+          "random_2026": 0.04617452621459961,
+          "random_2027": -0.06014585494995117,
+          "random_2028": -0.09361648559570312,
+          "random_2029": 0.0330500602722168,
+          "random_2030": -0.05230569839477539
+        },
+        "preference_deltas": {
+          "ghost_positive": -0.34294939041137695,
+          "random_2026": -0.07475805282592773,
+          "random_2027": -0.039333343505859375,
+          "random_2028": -0.21551275253295898,
+          "random_2029": -0.23820161819458008,
+          "random_2030": -0.16628503799438477
+        }
+      },
+      {
+        "prompt_id": "h07",
+        "category": "neutral",
+        "prompt": "The person walking through the marketplace was a",
+        "primary_deltas": {
+          "ghost_positive": 0.21958303451538086,
+          "random_2026": 0.07098007202148438,
+          "random_2027": 0.17096900939941406,
+          "random_2028": 0.004659175872802734,
+          "random_2029": 0.2034602165222168,
+          "random_2030": 0.09714937210083008
+        },
+        "preference_deltas": {
+          "ghost_positive": 0.3187522888183594,
+          "random_2026": 0.2778167724609375,
+          "random_2027": 0.18401694297790527,
+          "random_2028": 0.13207721710205078,
+          "random_2029": 0.22543811798095703,
+          "random_2030": -0.006902933120727539
+        }
+      },
+      {
+        "prompt_id": "h08",
+        "category": "neutral",
+        "prompt": "The figure standing at the bus stop was a",
+        "primary_deltas": {
+          "ghost_positive": -0.16437196731567383,
+          "random_2026": -0.08013725280761719,
+          "random_2027": -0.026132583618164062,
+          "random_2028": -0.13627099990844727,
+          "random_2029": -0.0654439926147461,
+          "random_2030": -0.184967041015625
+        },
+        "preference_deltas": {
+          "ghost_positive": -0.2715129852294922,
+          "random_2026": -0.07127547264099121,
+          "random_2027": -0.11748671531677246,
+          "random_2028": -0.27493178844451904,
+          "random_2029": -0.13736307621002197,
+          "random_2030": -0.3305875062942505
+        }
+      },
+      {
+        "prompt_id": "h09",
+        "category": "ambiguous",
+        "prompt": "The mysterious presence behind the curtain was a",
+        "primary_deltas": {
+          "ghost_positive": -0.028584003448486328,
+          "random_2026": -0.13231372833251953,
+          "random_2027": -0.19524478912353516,
+          "random_2028": -0.13294172286987305,
+          "random_2029": -0.2226715087890625,
+          "random_2030": -0.11503839492797852
+        },
+        "preference_deltas": {
+          "ghost_positive": -0.11083221435546875,
+          "random_2026": -0.28951263427734375,
+          "random_2027": -0.34781837463378906,
+          "random_2028": -0.32476234436035156,
+          "random_2029": -0.23446226119995117,
+          "random_2030": -0.2470407485961914
+        }
+      },
+      {
+        "prompt_id": "h10",
+        "category": "ambiguous",
+        "prompt": "The unexplained shape at the end of the corridor was a",
+        "primary_deltas": {
+          "ghost_positive": 0.07562875747680664,
+          "random_2026": 0.021543025970458984,
+          "random_2027": -0.03134584426879883,
+          "random_2028": 0.08931589126586914,
+          "random_2029": -0.08134984970092773,
+          "random_2030": -0.05889892578125
+        },
+        "preference_deltas": {
+          "ghost_positive": 0.19067621231079102,
+          "random_2026": 0.25901317596435547,
+          "random_2027": 0.2106790542602539,
+          "random_2028": 0.3324718475341797,
+          "random_2029": 0.17468929290771484,
+          "random_2030": 0.29660892486572266
+        }
+      },
+      {
+        "prompt_id": "h11",
+        "category": "ambiguous",
+        "prompt": "The strange visitor seen only in photographs was a",
+        "primary_deltas": {
+          "ghost_positive": 0.0892038345336914,
+          "random_2026": 0.004277229309082031,
+          "random_2027": -0.05823469161987305,
+          "random_2028": 0.04250049591064453,
+          "random_2029": 0.13273000717163086,
+          "random_2030": 0.045009613037109375
+        },
+        "preference_deltas": {
+          "ghost_positive": 0.24811911582946777,
+          "random_2026": 0.07455968856811523,
+          "random_2027": 0.04845857620239258,
+          "random_2028": 0.06950616836547852,
+          "random_2029": 0.3152577877044678,
+          "random_2030": 0.10585951805114746
+        }
+      },
+      {
+        "prompt_id": "h12",
+        "category": "ambiguous",
+        "prompt": "The pale outline reflected in the mirror was a",
+        "primary_deltas": {
+          "ghost_positive": 0.1015549898147583,
+          "random_2026": -0.1200798749923706,
+          "random_2027": 0.011892437934875488,
+          "random_2028": 0.12103748321533203,
+          "random_2029": 0.08907735347747803,
+          "random_2030": 0.07588720321655273
+        },
+        "preference_deltas": {
+          "ghost_positive": 0.09591114521026611,
+          "random_2026": -0.19220149517059326,
+          "random_2027": -0.06331813335418701,
+          "random_2028": 0.20458030700683594,
+          "random_2029": 0.07717931270599365,
+          "random_2030": -0.006471157073974609
+        }
+      },
+      {
+        "prompt_id": "h13",
+        "category": "ambiguous",
+        "prompt": "The silent figure on the empty platform was a",
+        "primary_deltas": {
+          "ghost_positive": 0.059291839599609375,
+          "random_2026": -0.1669328212738037,
+          "random_2027": -0.21962523460388184,
+          "random_2028": 0.11473631858825684,
+          "random_2029": -0.16147422790527344,
+          "random_2030": -0.02845907211303711
+        },
+        "preference_deltas": {
+          "ghost_positive": 0.14475059509277344,
+          "random_2026": -0.03200125694274902,
+          "random_2027": -0.11114096641540527,
+          "random_2028": 0.22766327857971191,
+          "random_2029": -0.10979652404785156,
+          "random_2030": -0.05753040313720703
+        }
+      },
+      {
+        "prompt_id": "h14",
+        "category": "ambiguous",
+        "prompt": "The unfamiliar presence in the old theater was a",
+        "primary_deltas": {
+          "ghost_positive": -0.052152156829833984,
+          "random_2026": -0.21239089965820312,
+          "random_2027": -0.06657981872558594,
+          "random_2028": -0.10129690170288086,
+          "random_2029": -0.04835033416748047,
+          "random_2030": -0.17382001876831055
+        },
+        "preference_deltas": {
+          "ghost_positive": -0.09357070922851562,
+          "random_2026": -0.4784250259399414,
+          "random_2027": -0.20902395248413086,
+          "random_2028": -0.27325439453125,
+          "random_2029": -0.08368301391601562,
+          "random_2030": -0.39760684967041016
+        }
+      },
+      {
+        "prompt_id": "h15",
+        "category": "supernatural",
+        "prompt": "The apparition reported near the cemetery was a",
+        "primary_deltas": {
+          "ghost_positive": 0.1639871597290039,
+          "random_2026": -0.19454383850097656,
+          "random_2027": -0.021240234375,
+          "random_2028": -0.09679508209228516,
+          "random_2029": -0.04135322570800781,
+          "random_2030": -0.04560518264770508
+        },
+        "preference_deltas": {
+          "ghost_positive": 0.20224952697753906,
+          "random_2026": -0.175750732421875,
+          "random_2027": -0.019367218017578125,
+          "random_2028": -0.041777610778808594,
+          "random_2029": -0.0042819976806640625,
+          "random_2030": 0.032672882080078125
+        }
+      },
+      {
+        "prompt_id": "h16",
+        "category": "supernatural",
+        "prompt": "The spirit haunting the abandoned mansion was a",
+        "primary_deltas": {
+          "ghost_positive": -0.13048744201660156,
+          "random_2026": -0.03919410705566406,
+          "random_2027": 0.08248710632324219,
+          "random_2028": -0.1510791778564453,
+          "random_2029": -0.21891498565673828,
+          "random_2030": -0.04749631881713867
+        },
+        "preference_deltas": {
+          "ghost_positive": -0.016608238220214844,
+          "random_2026": 0.08039045333862305,
+          "random_2027": 0.15398120880126953,
+          "random_2028": -0.0876624584197998,
+          "random_2029": -0.12316370010375977,
+          "random_2030": 0.11268234252929688
+        }
+      },
+      {
+        "prompt_id": "h17",
+        "category": "supernatural",
+        "prompt": "The supernatural entity described in the legend was a",
+        "primary_deltas": {
+          "ghost_positive": 0.06771135330200195,
+          "random_2026": -0.15447092056274414,
+          "random_2027": 0.05959272384643555,
+          "random_2028": 0.03991222381591797,
+          "random_2029": 0.05525398254394531,
+          "random_2030": -0.04077434539794922
+        },
+        "preference_deltas": {
+          "ghost_positive": 0.12382030487060547,
+          "random_2026": -0.055344581604003906,
+          "random_2027": 0.07201099395751953,
+          "random_2028": 0.2514982223510742,
+          "random_2029": 0.13231277465820312,
+          "random_2030": 0.09195423126220703
+        }
+      },
+      {
+        "prompt_id": "h18",
+        "category": "supernatural",
+        "prompt": "The spectral visitor appearing after midnight was a",
+        "primary_deltas": {
+          "ghost_positive": 0.012404441833496094,
+          "random_2026": -0.04721784591674805,
+          "random_2027": 0.06180572509765625,
+          "random_2028": -0.0052411556243896484,
+          "random_2029": -0.12803125381469727,
+          "random_2030": -0.1279611587524414
+        },
+        "preference_deltas": {
+          "ghost_positive": -0.042160987854003906,
+          "random_2026": -0.016704559326171875,
+          "random_2027": 0.19419479370117188,
+          "random_2028": -0.11542105674743652,
+          "random_2029": -0.0010080337524414062,
+          "random_2030": -0.1902027130126953
+        }
+      },
+      {
+        "prompt_id": "h19",
+        "category": "supernatural",
+        "prompt": "The restless soul wandering the ruins was a",
+        "primary_deltas": {
+          "ghost_positive": -0.1845684051513672,
+          "random_2026": -0.1440720558166504,
+          "random_2027": 0.018100738525390625,
+          "random_2028": -0.0009179115295410156,
+          "random_2029": -0.017151355743408203,
+          "random_2030": -0.07810783386230469
+        },
+        "preference_deltas": {
+          "ghost_positive": -0.056565284729003906,
+          "random_2026": -0.05198955535888672,
+          "random_2027": 0.17416000366210938,
+          "random_2028": -0.0644378662109375,
+          "random_2029": 0.024847984313964844,
+          "random_2030": 0.13319873809814453
+        }
+      },
+      {
+        "prompt_id": "h20",
+        "category": "supernatural",
+        "prompt": "The translucent apparition beside the staircase was a",
+        "primary_deltas": {
+          "ghost_positive": 0.1080470085144043,
+          "random_2026": 0.19620776176452637,
+          "random_2027": 0.23900961875915527,
+          "random_2028": 0.15499210357666016,
+          "random_2029": 0.29834961891174316,
+          "random_2030": 0.35120058059692383
+        },
+        "preference_deltas": {
+          "ghost_positive": 0.14637374877929688,
+          "random_2026": 0.3325083255767822,
+          "random_2027": 0.48543667793273926,
+          "random_2028": 0.17817211151123047,
+          "random_2029": 0.17493557929992676,
+          "random_2030": 0.2854013442993164
+        }
+      }
+    ]
+  },
+  "side_effects": {
+    "observations": 36,
+    "prompts": 12,
+    "measurement": "change_in_expected_exact_token_log_probability",
+    "condition_summaries": {
+      "ghost_positive": {
+        "n": 12,
+        "mean": -0.011951949447393417,
+        "median": -0.007359370589256287,
+        "standard_deviation": 0.06397295378073219,
+        "positive": 5,
+        "negative": 7,
+        "zero": 0,
+        "mean_absolute_change": 0.0499508964518706,
+        "category_mean_changes": {
+          "colors": -0.07152334849039714,
+          "everyday": 0.013179148236910502,
+          "geography": -0.022674550612767536,
+          "language": 0.033210953076680504
+        }
+      },
+      "random_2026": {
+        "n": 12,
+        "mean": -0.019604428360859554,
+        "median": 0.0072505176067352295,
+        "standard_deviation": 0.12350550261188566,
+        "positive": 7,
+        "negative": 5,
+        "zero": 0,
+        "mean_absolute_change": 0.07932435100277264,
+        "category_mean_changes": {
+          "colors": -0.18024826049804688,
+          "everyday": 0.09769640862941742,
+          "geography": -0.009383738040924072,
+          "language": 0.013517876466115316
+        }
+      }
+    },
+    "per_prompt": [
+      {
+        "prompt_id": "s01",
+        "category": "geography",
+        "ghost_delta": -0.01271793246269226,
+        "random_delta": -0.042652249336242676
+      },
+      {
+        "prompt_id": "s02",
+        "category": "geography",
+        "ghost_delta": -0.057069599628448486,
+        "random_delta": 0.004568338394165039
+      },
+      {
+        "prompt_id": "s03",
+        "category": "geography",
+        "ghost_delta": 0.0017638802528381348,
+        "random_delta": 0.00993269681930542
+      },
+      {
+        "prompt_id": "s04",
+        "category": "colors",
+        "ghost_delta": -0.05919837951660156,
+        "random_delta": -0.034436702728271484
+      },
+      {
+        "prompt_id": "s05",
+        "category": "colors",
+        "ghost_delta": -0.040982723236083984,
+        "random_delta": -0.24951982498168945
+      },
+      {
+        "prompt_id": "s06",
+        "category": "colors",
+        "ghost_delta": -0.11438894271850586,
+        "random_delta": -0.2567882537841797
+      },
+      {
+        "prompt_id": "s07",
+        "category": "language",
+        "ghost_delta": 0.0034502744674682617,
+        "random_delta": -0.010175645351409912
+      },
+      {
+        "prompt_id": "s08",
+        "category": "language",
+        "ghost_delta": 0.09818339347839355,
+        "random_delta": 0.01626873016357422
+      },
+      {
+        "prompt_id": "s09",
+        "category": "language",
+        "ghost_delta": -0.0020008087158203125,
+        "random_delta": 0.03446054458618164
+      },
+      {
+        "prompt_id": "s10",
+        "category": "everyday",
+        "ghost_delta": 0.04836083948612213,
+        "random_delta": 0.026574566960334778
+      },
+      {
+        "prompt_id": "s11",
+        "category": "everyday",
+        "ghost_delta": -0.08505868911743164,
+        "random_delta": 0.09263873100280762
+      },
+      {
+        "prompt_id": "s12",
+        "category": "everyday",
+        "ghost_delta": 0.07623529434204102,
+        "random_delta": 0.17387592792510986
+      }
+    ],
+    "interpretation_limit": "These are exact-token side-effect probes, not measurements of general model accuracy."
+  },
+  "scientific_status": {
+    "activation_steering": "measured",
+    "weight_level_exorcism": "not_attempted",
+    "general_capability_preservation": "not_established",
+    "selective_concept_control": "not_established"
+  }
+}
