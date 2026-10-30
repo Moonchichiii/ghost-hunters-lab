@@ -1,0 +1,49 @@
+from fastapi.testclient import TestClient
+
+from ghost_lab.web.app import create_app
+
+
+def test_home_renders_headline() -> None:
+    client = TestClient(create_app())
+    response = client.get("/")
+    assert response.status_code == 200
+    assert "change one thought" in response.text
+
+
+def test_home_opens_with_the_editorial_hero() -> None:
+    client = TestClient(create_app())
+    page = client.get("/")
+    assert "Ghost in the Machine" in page.text
+    assert "Gilbert Ryle" in page.text
+
+
+def test_stylesheet_is_linked_and_served_locally() -> None:
+    client = TestClient(create_app())
+    page = client.get("/")
+    assert page.status_code == 200
+    assert "/static/css/site.css" in page.text
+    stylesheet = client.get("/static/css/site.css")
+    assert stylesheet.status_code == 200
+    assert stylesheet.headers["content-type"].startswith("text/css")
+
+
+def test_favicon_is_linked_and_served_locally() -> None:
+    client = TestClient(create_app())
+    page = client.get("/")
+    assert "/static/favicon.svg" in page.text
+    icon = client.get("/static/favicon.svg")
+    assert icon.status_code == 200
+    assert icon.headers["content-type"].startswith("image/svg+xml")
+
+
+def test_font_is_served_locally() -> None:
+    client = TestClient(create_app())
+    font = client.get("/static/fonts/Poppins-Variable.woff2")
+    assert font.status_code == 200
+    assert len(font.content) > 10_000
+
+
+def test_hero_carries_the_specimen_illustration() -> None:
+    client = TestClient(create_app())
+    page = client.get("/")
+    assert 'class="specimen"' in page.text
