@@ -1,11 +1,433 @@
+
 {% extends "base.html" %}
 {% block body %}
-<main class="page">
-  <section class="hero" aria-labelledby="question">
-    <p class="eyebrow">Ghost in the Machine <span>/ an open-weight experiment</span></p>
-    <h1 id="question">We opened an AI model to see if we could change one thought without breaking everything else.</h1>
-    <p class="lead">We found a signal linked to ghosts inside Gemma. Now we're testing what happens when we turn it up, and what else changes.</p>
-    <p class="note">In 1949 Gilbert Ryle challenged the idea of a "ghost in the machine" in <a href="https://en.wikipedia.org/wiki/The_Concept_of_Mind">The Concept of Mind</a>. We borrow the metaphor, not the question: this is not a test of whether AI has a mind.</p>
+{% set analysis = evidence.heldout.analysis %}
+{% set primary = analysis.summaries %}
+{% set secondary = analysis.preference_summaries %}
+{% set side_effects = evidence.side_effects.condition_summaries %}
+
+<main class="page" id="top">
+  <header class="masthead" aria-label="Publication information">
+    <a class="wordmark" href="#top">
+      <svg class="pumpkin-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 7c-.5-2 .5-4 3-5M16 9C8 5 3 11 4 19c1 8 7 11 12 9 5 2 11-1 12-9 1-8-4-14-12-10Z"/>
+        <path d="M12 9c-4 5-4 14 0 19M20 9c4 5 4 14 0 19M9 17l3-4 2 4m4 0 2-4 3 4M10 22c4 4 8 4 12 0"/>
+      </svg>
+      The Ghost Hunter's Lab
+    </a>
+    <span class="folio">
+      Personal field notes
+      <span aria-hidden="true">/</span>
+      October 2026
+    </span>
+  </header>
+
+  <section class="hero" aria-labelledby="question" id="hunt">
+    <div class="hero-copy" data-reveal>
+      <p class="eyebrow">
+        01 / The hunt
+        <span>— A real experiment. A strange question.</span>
+      </p>
+
+      <h1 id="question">
+        I went looking for a <em>ghost</em> inside an AI model.
+      </h1>
+
+      <p class="lead">
+        I found a ghost-related signal inside Gemma.
+        I altered its internal activity, tested the effects
+        against five random directions, and measured what
+        else changed.
+      </p>
+
+      <a class="read-link" href="#myth">
+        Open the case file
+        <span aria-hidden="true">↓</span>
+      </a>
+
+      <p class="hero-question">
+        My question: can I <strong>change one thought</strong>
+        without disturbing everything else?
+      </p>
+    </div>
+
+    <figure class="plate" aria-labelledby="plate-title" data-plate>
+      <div class="plate-heading">
+        <span id="plate-title">Plate 01 / The intervention</span>
+        <span>Schematic, not a scan</span>
+      </div>
+
+      <svg
+        class="specimen"
+        viewBox="0 0 320 320"
+        role="img"
+        aria-labelledby="plate-svg-title plate-svg-desc"
+      >
+        <title id="plate-svg-title">
+          Thirty-four schematic model layers, with layer 22 highlighted
+        </title>
+
+        <desc id="plate-svg-desc">
+          Concentric circles suggest the depth of Gemma 3 4B.
+          The amber ring marks the layer where the feature
+          direction was injected. This is not a map of neurons
+          or recorded activations.
+        </desc>
+
+        <g class="layer-rings" fill="none">
+          {% for layer in range(1, 35) %}
+          <circle
+            cx="160"
+            cy="160"
+            r="{{ 18 + (layer - 1) * 3.3 }}"
+            class="{{ 'target-ring' if layer == 22 else 'layer-ring' }}"
+            data-layer="{{ layer }}"
+          />
+          {% endfor %}
+        </g>
+
+        <circle class="plate-center" cx="160" cy="160" r="4" />
+
+        <path class="plate-leader" d="M225 94 270 49" />
+
+        <text class="plate-number" x="274" y="42">#23871</text>
+        <text class="plate-label" x="274" y="57">layer 22</text>
+      </svg>
+
+      <figcaption>
+        <strong>Feature #23871 · Layer 22</strong>
+        <span>
+          Thirty-four transformer layers shown schematically.
+          I added a 2,560-dimensional direction to the model's
+          internal activity; the rings are not measured
+          activation geometry.
+        </span>
+      </figcaption>
+    </figure>
   </section>
+
+  <div class="evidence-strip" aria-label="Research at a glance">
+    <p>
+      <span>Measurements</span>
+      <strong>140 held-out + 36 side-effect</strong>
+    </p>
+
+    <p>
+      <span>Controls</span>
+      <strong>5 norm-matched random directions</strong>
+    </p>
+
+    <p>
+      <span>Intervention</span>
+      <strong>Activations changed · weights untouched</strong>
+    </p>
+  </div>
+
+  <section
+    class="chapter chapter--myth"
+    id="myth"
+    aria-labelledby="myth-title"
+    data-chapter
+  >
+    <p class="chapter-index">02 / The myth</p>
+
+    <h2 id="myth-title">
+      He challenged the myth.
+      <br>
+      <em>I borrowed the metaphor.</em>
+    </h2>
+
+    <blockquote>
+      <p>“the dogma of the Ghost in the Machine”</p>
+
+      <footer>
+        Gilbert Ryle,
+        <cite>
+          <a href="https://en.wikipedia.org/wiki/The_Concept_of_Mind">
+            The Concept of Mind
+          </a>
+        </cite>
+        (1949)
+      </footer>
+    </blockquote>
+
+    <p>
+      Ryle challenged a way of thinking about minds.
+      I'm not testing whether AI is conscious or possessed.
+      “Ghosts and spirits” is a published label for a feature
+      identified using Gemma Scope 2. I wanted to see what
+      happens when I perturb that direction.
+    </p>
+  </section>
+
+  <section
+    class="chapter"
+    id="method"
+    aria-labelledby="method-title"
+    data-chapter
+  >
+    <p class="chapter-index">03 / The method</p>
+
+    <h2 id="method-title">
+      Find it. Change it. Check the consequences.
+    </h2>
+
+    <ol class="method-steps">
+      <li>
+        <span class="step-number">01</span>
+        <h3>Find</h3>
+
+        <p>
+          I extracted the decoder direction for SAE feature
+          #23871 from a published Gemma Scope 2 checkpoint.
+        </p>
+      </li>
+
+      <li>
+        <span class="step-number">02</span>
+        <h3>Change</h3>
+
+        <p>
+          I injected that direction at layer 22 while Gemma
+          generated text. The original model weights remained
+          unchanged.
+        </p>
+      </li>
+
+      <li>
+        <span class="step-number">03</span>
+        <h3>Compare</h3>
+
+        <p>
+          I used 20 previously untested prompts, five
+          norm-matched random directions, and recorded
+          the next-token scores.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section
+    class="chapter chapter--measurements"
+    id="measurements"
+    aria-labelledby="measurements-title"
+    data-chapter
+  >
+    <p class="chapter-index">04 / The measurements</p>
+
+    <h2 id="measurements-title">
+      A signal. Not a supernatural event.
+    </h2>
+
+    <p class="chapter-lead">
+      On {{ evidence.heldout.prompts }} frozen prompts, the
+      ghost direction increased the exact next token
+      <code>" ghost"</code> on
+      <strong>
+        {{ primary.ghost_positive.positive }}
+        of {{ primary.ghost_positive.n }}
+      </strong>.
+      Its mean shift exceeded the mean of each of the five
+      sampled random controls. The effect was small and
+      not consistent across prompts.
+    </p>
+
+    <div class="highlight-stat" data-reveal>
+      <span>
+        Mean Δ log P(<code>" ghost"</code>) · SAE +16
+      </span>
+
+      <strong>
+        {{ '%+.4f'|format(primary.ghost_positive['mean']) }}
+      </strong>
+
+      <small>
+        Exact-token metric, not a measure of what
+        the model “thinks”.
+      </small>
+    </div>
+
+    <div
+      class="table-scroll"
+      tabindex="0"
+      role="region"
+      aria-label="Measured steering conditions"
+    >
+      <table class="measurement-table">
+        <caption>
+          Mean change against the unmodified model, across
+          20 prompts. Positive values mean the target token
+          became more likely.
+        </caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Direction</th>
+            <th scope="col">Δ log P(" ghost")</th>
+            <th scope="col">Δ preference (ghost − man)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for name, stats in primary.items() %}
+          <tr class="{{ 'is-ghost' if name == 'ghost_positive' else 'is-control' }}">
+            <th scope="row">
+              {% if name == 'ghost_positive' %}
+                Ghost SAE +16
+              {% else %}
+                Random {{ name.replace('random_', '') }} +16
+              {% endif %}
+            </th>
+
+            <td>
+              {{ '%+.4f'|format(stats['mean']) }}
+            </td>
+
+            <td>
+              {{ '%+.4f'|format(secondary[name]['mean']) }}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <details class="data-disclosure">
+      <summary>Inspect all 20 prompt outcomes</summary>
+
+      <div
+        class="table-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="Individual ghost steering results"
+      >
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Prompt</th>
+              <th scope="col">Category</th>
+              <th scope="col">Δ log P(" ghost")</th>
+              <th scope="col">Δ preference</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for item in evidence.heldout.per_prompt %}
+            <tr>
+              <th scope="row">
+                {{ item.prompt_id }} · {{ item.prompt }}
+              </th>
+
+              <td>{{ item.category }}</td>
+
+              <td>
+                {{ '%+.4f'|format(item.primary_deltas.ghost_positive) }}
+              </td>
+
+              <td>
+                {{ '%+.4f'|format(item.preference_deltas.ghost_positive) }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <p class="science-note">
+      These prompts were frozen before evaluation, but designed
+      with knowledge of the feature and earlier pilot results.
+      Five random directions are informative controls,
+      not a representative statistical sample.
+    </p>
+  </section>
+
+  <section
+    class="chapter"
+    id="consequences"
+    aria-labelledby="consequences-title"
+    data-chapter
+  >
+    <p class="chapter-index">05 / The consequences</p>
+
+    <h2 id="consequences-title">
+      The ghost wasn't the only thing that moved.
+    </h2>
+
+    <p class="chapter-lead">
+      I tested 12 unrelated next-token predictions:
+      geography, colors, language and everyday knowledge.
+      The intervention affected these probabilities too.
+    </p>
+
+    <div class="side-effect-comparison">
+      <p>
+        <span>Ghost +16 · mean absolute change</span>
+        <strong>
+          {{ '%.4f'|format(side_effects.ghost_positive.mean_absolute_change) }}
+        </strong>
+      </p>
+
+      <p>
+        <span>Random 2026 +16 · mean absolute change</span>
+        <strong>
+          {{ '%.4f'|format(side_effects.random_2026.mean_absolute_change) }}
+        </strong>
+      </p>
+    </div>
+
+    <p class="science-note">
+      These are exact-token side-effect probes, not a
+      general capability or accuracy benchmark.
+      A changed probability does not mean the model
+      has lost an ability.
+    </p>
+  </section>
+
+  <section
+    class="chapter chapter--verdict"
+    id="verdict"
+    aria-labelledby="verdict-title"
+    data-chapter
+  >
+    <p class="chapter-index">06 / The verdict</p>
+
+    <h2 id="verdict-title">
+      I moved a signal.
+      <br>
+      <em>I didn't erase a ghost.</em>
+    </h2>
+
+    <p>
+      The experiments demonstrate measurable effects from
+      activation steering in an open-weight model.
+      They do not establish selective control of an entire
+      concept, preservation of general capabilities, or a
+      permanent change to the model's weights.
+    </p>
+
+    <p class="science-note">
+      Weight-level exorcism:
+      <strong>not attempted</strong>.
+      Every figure on this page comes from the recorded
+      experiment summary.
+    </p>
+
+    <a class="read-link" href="#top">
+      Return to the beginning
+      <span aria-hidden="true">↑</span>
+    </a>
+  </section>
+
+  <footer class="site-footer">
+    <p>
+      The Ghost Hunter's Lab ·
+      A personal open-weight investigation
+    </p>
+
+    <a href="https://github.com/Moonchichiii/ghost-hunters-lab">
+      Source code and reproducibility notes
+    </a>
+  </footer>
 </main>
 {% endblock %}

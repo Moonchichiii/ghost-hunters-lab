@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="{{ url_for('static', path='css/site.css') }}">
     <link rel="icon" type="image/svg+xml" href="{{ url_for('static', path='favicon.svg') }}">
   <title>{% block title %}The Ghost Hunter's Lab{% endblock %}</title>
+  <script defer src="{{ url_for('static', path='js/vendor/gsap.min.js') }}"></script>
+  <script defer src="{{ url_for('static', path='js/vendor/ScrollTrigger.min.js') }}"></script>
+  <script defer src="{{ url_for('static', path='js/motion.js') }}"></script>
 </head>
 <body>
   {% block body %}{% endblock %}

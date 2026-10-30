@@ -41,3 +41,9 @@ def test_font_is_served_locally() -> None:
     font = client.get("/static/fonts/Poppins-Variable.woff2")
     assert font.status_code == 200
     assert len(font.content) > 10_000
+
+
+def test_hero_carries_the_specimen_illustration() -> None:
+    client = TestClient(create_app())
+    page = client.get("/")
+    assert 'class="specimen"' in page.text
